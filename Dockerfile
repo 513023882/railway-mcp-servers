@@ -7,9 +7,10 @@ RUN python3 -m ensurepip && \
     pip install --no-cache-dir uv && \
     apk add --no-cache nodejs npm
 
-# Pre-install official MCP servers globally
-RUN npm install -g \
-    @modelcontextprotocol/server-fetch \
+# Pre-install official MCP servers
+# fetch is Python-only; memory and sequential-thinking are on npm
+RUN uv tool install mcp-server-fetch && \
+    npm install -g \
     @modelcontextprotocol/server-memory \
     @modelcontextprotocol/server-sequential-thinking
 

@@ -1,6 +1,9 @@
 #!/bin/sh
 set -e
 
+# Ensure uv-installed tools are on PATH
+export PATH="/root/.local/bin:${PATH}"
+
 PORT="${PORT:-8080}"
 CONFIG_FILE="${MCP_CONFIG_FILE:-/default-servers.json}"
 MCP_CORS="${MCP_CORS_ORIGIN:-*}"
@@ -16,7 +19,7 @@ echo "  Config: ${CONFIG_FILE}"
 echo ""
 
 # Build args
-ARGS="--port ${PORT} --named-server-config ${CONFIG_FILE} --pass-environment --allow-origin ${MCP_CORS}"
+ARGS="--host 0.0.0.0 --port ${PORT} --named-server-config ${CONFIG_FILE} --pass-environment --allow-origin ${MCP_CORS}"
 
 echo "Endpoints:"
 echo "  Status:  http://0.0.0.0:${PORT}/status"
