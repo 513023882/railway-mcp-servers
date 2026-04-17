@@ -18,8 +18,8 @@
       "env": {}
     },
     "imap": {
-      "command": "npx",
-      "args": ["imap-mcp"],
+      "command": "imap-mcp",
+      "args": [],
       "env": {
         "IMAP_HOST": "imap.qq.com",
         "IMAP_PORT": "993",
