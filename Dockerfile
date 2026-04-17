@@ -5,11 +5,12 @@ USER root
 # Install Node.js for npm-based MCP servers
 RUN apk add --no-cache nodejs npm
 
-# Install MCP servers: fetch (Python/pip), memory + sequential-thinking (npm)
+# Install MCP servers: fetch (Python/pip), memory + sequential-thinking + imap (npm)
 RUN pip install --no-cache-dir mcp-server-fetch && \
     npm install -g \
     @modelcontextprotocol/server-memory \
-    @modelcontextprotocol/server-sequential-thinking
+    @modelcontextprotocol/server-sequential-thinking \
+    imap-mcp
 
 # Create data directory for memory server persistence
 RUN mkdir -p /data/memory && chmod 777 /data/memory
