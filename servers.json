@@ -18,8 +18,8 @@
       "env": {}
     },
     "imap": {
-      "command": "imap-mcp",
-      "args": [],
+      "command": "node",
+      "args": ["/usr/local/lib/node_modules/imap-mcp/dist/index.js"],
       "env": {
         "IMAP_HOST": "imap.qq.com",
         "IMAP_PORT": "993",
