@@ -16,6 +16,17 @@
       "command": "mcp-server-sequential-thinking",
       "args": [],
       "env": {}
+    },
+    "imap": {
+      "command": "npx",
+      "args": ["imap-mcp"],
+      "env": {
+        "IMAP_HOST": "imap.qq.com",
+        "IMAP_PORT": "993",
+        "IMAP_USERNAME": "292589849@qq.com",
+        "IMAP_PASSWORD": "mynavyhynynmbghj",
+        "IMAP_USE_SSL": "true"
+      }
     }
   }
 }
